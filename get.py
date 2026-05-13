@@ -13,8 +13,8 @@ url = "http://api.semanticscholar.org/graph/v1/paper/search/bulk"
 
 # Define the query parameters
 query_params = {
-    "query": '"generative ai"',
-    "fields": "title,url,publicationTypes,publicationDate,openAccessPdf",
+    "query": '"computer science"',
+    "fields": "title,url,publicationTypes,publicationDate,openAccessPdf,citationCount,abstract",
     "year": "2023-"
 }
 
@@ -27,5 +27,5 @@ headers = {"x-api-key": api_key}
 # Send the API request
 response = requests.get(url, params=query_params, headers=headers).json()
 
-with open("results.json", "w") as f:
+with open("test_get_results.json", "w") as f:
     json.dump(response, f, indent=2)
