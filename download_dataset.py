@@ -16,12 +16,12 @@ headers = {"x-api-key": api_key}
 release_id = "2026-05-05"
 
 # Define dataset name you want to download
-dataset_name = "abstracts"
+dataset_name = "citations"
 
 # Send the GET request and store the response in a variable
 response = requests.get(base_url + release_id + '/dataset/' + dataset_name, headers=headers)
 
 
 
-with open("datasets.json", "w") as f:
+with open("citation_datasets.json", "w") as f:
     json.dump(response.json(), f, indent=2)
