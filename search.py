@@ -22,7 +22,7 @@ all_fields = (
 query_params = {
     "query": '"generative ai"',
     "fields": all_fields,
-    "limit": 1
+    "limit": 1,
 }
 
 # Directly define the API key (Reminder: Securely handle API keys in production environments)
