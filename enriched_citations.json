@@ -1,0 +1,156 @@
+[
+  {
+    "citation_title": "Triple Dual Learning for Opinion-based Explainable Recommendation",
+    "citation_doi": "10.1145/3631521",
+    "match_method": "doi",
+    "matched_title": "Triple Dual Learning for Opinion-based Explainable Recommendation",
+    "year": 2023
+  },
+  {
+    "citation_title": "Visual analytics of route recommendation for tourist evacuation based on graph neural network",
+    "citation_doi": "10.1038/s41598-023-42862-z",
+    "match_method": "doi",
+    "matched_title": "Visual analytics of route recommendation for tourist evacuation based on graph neural network",
+    "year": 2023
+  },
+  {
+    "citation_title": "Variational quantum algorithm for node embedding",
+    "citation_doi": "10.1016/j.fmre.2023.10.001",
+    "match_method": "doi",
+    "matched_title": "Supplementary Material of 'Variational quantum algorithm for node embedding'",
+    "year": 2023
+  },
+  {
+    "citation_title": "Beyond Weisfeiler-Lehman with Local Ego-Network Encodings",
+    "citation_doi": "10.3390/make5040063",
+    "match_method": "doi",
+    "matched_title": "Beyond Weisfeiler-Lehman with Local Ego-Network Encodings \u2020",
+    "year": 2023
+  },
+  {
+    "citation_title": "Drug-target binding affinity prediction using message passing neural network and self supervised learning",
+    "citation_doi": "10.1186/s12864-023-09664-z",
+    "match_method": "doi",
+    "matched_title": "Drug-target binding affinity prediction using message passing neural network and self supervised learning",
+    "year": 2023
+  },
+  {
+    "citation_title": "Classification of hyperspectral images using fusion of CNN and MiniGCN with SVM",
+    "citation_doi": "10.1080/17538947.2023.2229793",
+    "match_method": "doi",
+    "matched_title": "Classification of hyperspectral images using fusion of CNN and MiniGCN with SVM",
+    "year": 2023
+  },
+  {
+    "citation_title": "Hessian-aware Quantized Node Embeddings for Recommendation",
+    "citation_doi": "10.1145/3604915.3608826",
+    "match_method": "doi",
+    "matched_title": "Hessian-aware Quantized Node Embeddings for Recommendation",
+    "year": 2023
+  },
+  {
+    "citation_title": "GraphPrior: Mutation-based Test Input Prioritization for Graph Neural Networks",
+    "citation_doi": "10.1145/3607191",
+    "match_method": "doi",
+    "matched_title": "GraphPrior: Mutation-based Test Input Prioritization for Graph Neural Networks",
+    "year": 2023
+  },
+  {
+    "citation_title": "Enhanced Multi-Relationships Integration Graph Convolutional Network for Inferring Substitutable and Complementary Items",
+    "citation_doi": "10.1609/aaai.v37i4.25532",
+    "match_method": "doi",
+    "matched_title": "Enhanced Multi-Relationships Integration Graph Convolutional Network for Inferring Substitutable and Complementary Items",
+    "year": 2023
+  },
+  {
+    "citation_title": "Scalable Attributed-Graph Subspace Clustering",
+    "citation_doi": "10.1609/aaai.v37i6.25918",
+    "match_method": "doi",
+    "matched_title": "Scalable Attributed-Graph Subspace Clustering",
+    "year": 2023
+  },
+  {
+    "citation_title": "Self-Supervised Graph Attention Networks for Deep Weighted Multi-View Clustering",
+    "citation_doi": "10.1609/aaai.v37i7.25960",
+    "match_method": "doi",
+    "matched_title": "Self-Supervised Graph Attention Networks for Deep Weighted Multi-View Clustering",
+    "year": 2023
+  },
+  {
+    "citation_title": "HGT: A Hierarchical GCN-Based Transformer for Multimodal Periprosthetic Joint Infection Diagnosis Using Computed Tomography Images and Text",
+    "citation_doi": "10.3390/s23135795",
+    "match_method": "doi",
+    "matched_title": "HGT: A Hierarchical GCN-Based Transformer for Multimodal Periprosthetic Joint Infection Diagnosis Using Computed Tomography Images and Text",
+    "year": 2023
+  },
+  {
+    "citation_title": "Advances in spatiotemporal graph neural network prediction research",
+    "citation_doi": "10.1080/17538947.2023.2220610",
+    "match_method": "doi",
+    "matched_title": "Advances in spatiotemporal graph neural network prediction research",
+    "year": 2023
+  },
+  {
+    "citation_title": "A deep graph convolutional neural network architecture for graph classification",
+    "citation_doi": "10.1371/journal.pone.0279604",
+    "match_method": "doi",
+    "matched_title": "A deep graph convolutional neural network architecture for graph classification",
+    "year": 2023
+  },
+  {
+    "citation_title": "A GNN-based proactive caching strategy in NDN networks",
+    "citation_doi": "10.1007/s12083-023-01464-2",
+    "match_method": "doi",
+    "matched_title": "A GNN-based proactive caching strategy in NDN networks",
+    "year": 2023
+  },
+  {
+    "citation_title": "Gene expression prediction based on neighbour connection neural network utilizing gene interaction graphs",
+    "citation_doi": "10.1371/journal.pone.0281286",
+    "match_method": "doi",
+    "matched_title": "Gene expression prediction based on neighbour connection neural network utilizing gene interaction graphs",
+    "year": 2023
+  },
+  {
+    "citation_title": "MIRN: A multi-interest retrieval network with sequence-to-interest EM routing",
+    "citation_doi": "10.1371/journal.pone.0281275",
+    "match_method": "doi",
+    "matched_title": "MIRN: A multi-interest retrieval network with sequence-to-interest EM routing",
+    "year": 2023
+  },
+  {
+    "citation_title": "TREPH: A Plug-In Topological Layer for Graph Neural Networks",
+    "citation_doi": "10.3390/e25020331",
+    "match_method": "doi",
+    "matched_title": "TREPH: A Plug-In Topological Layer for Graph Neural Networks",
+    "year": 2023
+  },
+  {
+    "citation_title": "Echo state graph neural networks with analogue random resistive memory arrays",
+    "citation_doi": "10.1038/s42256-023-00609-5",
+    "match_method": "doi",
+    "matched_title": "nature machine intelligence Article",
+    "year": 2023
+  },
+  {
+    "citation_title": "Predicting in vitro single-neuron firing rates upon pharmacological perturbation using Graph Neural Networks",
+    "citation_doi": "10.3389/fninf.2022.1032538",
+    "match_method": "doi",
+    "matched_title": "OPEN ACCESS EDITED BY",
+    "year": 2023
+  },
+  {
+    "citation_title": "Exploiting Dual-Attention Networks for Explainable Recommendation in Heterogeneous Information Networks",
+    "citation_doi": "10.3390/e24121718",
+    "match_method": "doi",
+    "matched_title": "",
+    "year": 2022
+  },
+  {
+    "citation_title": "An Overview of Knowledge Graph Reasoning: Key Technologies and Applications",
+    "citation_doi": "10.3390/jsan11040078",
+    "match_method": "doi",
+    "matched_title": "An Overview of Knowledge Graph Reasoning: Key Technologies and Applications",
+    "year": 2022
+  }
+]
