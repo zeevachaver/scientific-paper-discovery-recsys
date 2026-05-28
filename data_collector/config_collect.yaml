@@ -1,0 +1,59 @@
+project:
+  output_dir: data
+  cache_dir: raw_cache
+
+api:
+  base_url: "https://api.semanticscholar.org/graph/v1"
+  rate_limit_seconds: 1.10
+  max_retries: 6
+  timeout_seconds: 60
+
+fields:
+  # These are the fields needed by our downstream cleaning/ranking/evaluation pipeline.
+  paper: "externalIds,corpusId,url,title,abstract,venue,publicationVenue,year,referenceCount,citationCount,influentialCitationCount,isOpenAccess,openAccessPdf,fieldsOfStudy,s2FieldsOfStudy,publicationTypes,publicationDate,journal,authors"
+  # For citations/references endpoints, request paper fields directly; the API places them inside citingPaper/citedPaper.
+  edge_paper: "contexts,intents,isInfluential,externalIds,corpusId,url,title,abstract,venue,publicationVenue,year,referenceCount,citationCount,influentialCitationCount,isOpenAccess,openAccessPdf,fieldsOfStudy,s2FieldsOfStudy,publicationTypes,publicationDate,journal,authors"
+
+bulk_search:
+  # Increase pages_per_query for final collection. 10 queries * 30 pages * 1000 = up to 300k raw results.
+  pages_per_query: 5
+  sort: "citationCount:desc"
+  year: "2015-"
+  fieldsOfStudy: "Computer Science"
+  publicationTypes: "JournalArticle,Conference"
+  minCitationCount: 0
+  queries:
+    - "scientific paper retrieval"
+    - "citation recommendation"
+    - "academic search"
+    - "literature search"
+    - "paper recommendation"
+    - "citation graph"
+    - "retrieval augmented generation"
+    - "LLM reranking"
+    - "scientific recommendation"
+    - "graph based recommendation"
+
+anchors:
+  # For final run, use 1000 or more if time allows.
+  n_anchors: 200
+  high_citation_fraction: 0.40
+  recent_fraction: 0.30
+  random_fraction: 0.30
+  recent_year_threshold: 2021
+  random_seed: 172
+  include_seed_papers: true
+
+edges:
+  # For final run, use 500 or 1000. Smaller numbers make quick testing easier.
+  citations_per_anchor: 200
+  references_per_anchor: 200
+  endpoint_limit: 100
+  # Empty means no extra filter. Example: "2015-01-01:"
+  publicationDateOrYear: ""
+
+enrich:
+  batch_size: 500
+
+build_outputs:
+  keep_edges_without_metadata: false

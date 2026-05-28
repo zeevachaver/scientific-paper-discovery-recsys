@@ -1,0 +1,7 @@
+.env
+raw_cache/
+data/*.jsonl
+data/*.csv
+outputs/
+__pycache__/
+*.pyc
