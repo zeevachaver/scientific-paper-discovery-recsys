@@ -1,0 +1,2 @@
+num_papers,num_edges,num_candidate_pairs,num_targets,abstract_coverage,low_connectivity_rate,avg_citation_count,avg_reference_count
+6,6,6,2,1.0,0.0,918.6666666666666,40.333333333333336

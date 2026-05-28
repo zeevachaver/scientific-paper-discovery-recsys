@@ -1,0 +1,7 @@
+target_title,candidate_title,rank,final_score,semantic_score,graph_score,relation_score,predicted_relation,relation_reason,citation_path
+Retrieval Augmented Generation for Scientific Search,Improving Citation Graph Retrieval with LLM Reranking,1,0.4984584055904962,0.07888206841146322,1.0,0.75,extension,Detected extension-related terms in the candidate abstract/title.,P1|P3
+Retrieval Augmented Generation for Scientific Search,A Survey of Scientific Paper Recommendation,2,0.3775814840086481,0.07955871167173134,1.0,0.0,background,Detected background-related terms in the candidate abstract/title.,P1|P2
+Retrieval Augmented Generation for Scientific Search,Limitations of LLM-based Scientific Recommendation,3,0.274258771670514,0.06038220477289721,1.0,0.0,critique,Detected critique-related terms in the candidate abstract/title.,P1|P4
+Retrieval Augmented Generation for Scientific Search,Graph Neural Networks for Citation Prediction,4,0.16691818566025296,0.0213590683464333,0.5,0.0,application,Detected application-related terms in the candidate abstract/title.,P1|P2|P5
+Retrieval Augmented Generation for Scientific Search,Neural Machine Translation with Attention,5,0.1115832752508021,0.009285548335625024,0.0,0.0,background,Detected background-related terms in the candidate abstract/title.,
+Neural Machine Translation with Attention,Graph Neural Networks for Citation Prediction,1,0.10428835588542568,0.05670241184692678,0.0,0.0,application,Detected application-related terms in the candidate abstract/title.,

@@ -1,0 +1,37 @@
+paths:
+  raw_papers: data/sample/raw_papers.jsonl
+  raw_edges: data/sample/raw_edges.csv
+  cleaned_papers: data/sample/cleaned_papers.jsonl
+  graph_edges: data/sample/graph_edges.csv
+  candidate_pairs: data/sample/candidate_pairs.csv
+  ranked_results: outputs/sample_ranked_results.csv
+  relation_scores: outputs/sample_relation_scores.csv
+  metrics: outputs/sample_metrics.csv
+
+cleaning:
+  min_abstract_chars: 30
+  low_connectivity_citation_threshold: 5
+  low_connectivity_reference_threshold: 5
+
+pair_building:
+  n_targets: 2
+  candidates_per_target: 5
+  include_two_hop: true
+  max_two_hop_per_target: 3
+  negatives_per_target: 1
+  random_state: 172
+
+ranking:
+  desired_relation: extension
+  top_k: 20
+  weights:
+    semantic: 0.35
+    graph: 0.25
+    relation: 0.25
+    citation: 0.10
+    diversity: 0.05
+  mmr_lambda: 0.75
+
+evaluation:
+  k_values: [1, 3, 5]
+  positive_labels: [critique, extension, application]

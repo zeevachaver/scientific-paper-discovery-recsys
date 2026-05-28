@@ -1,0 +1,2 @@
+num_papers,num_edges,num_graph_nodes,avg_degree_undirected,num_components,year_min,year_max,abstract_coverage,low_connectivity_rate
+6,6,5,2.0,1,2015,2024,1.0,0.0

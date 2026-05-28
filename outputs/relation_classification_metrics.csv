@@ -1,0 +1,5 @@
+label,precision,recall,f1,support
+macro_avg,,,0.0,2.0
+application,0.0,0.0,0.0,0.0
+background,0.0,0.0,0.0,0.0
+unrelated,0.0,0.0,0.0,2.0
