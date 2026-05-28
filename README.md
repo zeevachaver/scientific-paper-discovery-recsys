@@ -1,11 +1,10 @@
 # ECS172 Relation-aware Citation Graph Recommender
 
-This code starts **after data acquisition**. It assumes you already have:
-
+data preparation:
 - `data/raw_papers.jsonl`: paper metadata from Semantic Scholar or another source
 - `data/raw_edges.csv`: citation/reference edges
 
-It implements:
+This project implements:
 
 1. data cleaning
 2. citation graph construction
@@ -86,4 +85,4 @@ python scripts/06_evaluate.py --config config.yaml
 
 ## Important project framing
 
-You can collect a large graph, but the later cleaning, ranking, relation scoring, and evaluation logic is the same. The expensive part is labeling/evaluation, so you can rank over a large candidate pool but evaluate a sampled target-candidate set.
+We can collect a large graph, but the later cleaning, ranking, relation scoring, and evaluation logic is the same. The expensive part is labeling/evaluation, so we can rank over a large candidate pool but evaluate a sampled target-candidate set.
