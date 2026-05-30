@@ -179,19 +179,13 @@
       <div class="header">
         <div>
           <h1>Computer Science Research Paper Search</h1>
-          <p>Type to search for a paper and use the dropdown to filter the relationship you're searching for.</p>
-          <p>Example: "Find papers that critique Attention Is All You Need."</p>
+          <p>Type to search for a paper based on a specific relationship.</p>
+          <p>Example: "Find papers that apply retrieval augmented generation for scientific search."</p>
         </div>
       </div>
 
       <section class="controls" aria-label="Search and filter controls">
         <input id="searchInput" class="field" type="search" placeholder="Search items..." aria-label="Search items" />
-        <select id="filterSelect" class="field" aria-label="Filter items">
-          <option value="none">None</option>
-          <option value="critique">Critique</option>
-          <option value="application">Application</option>
-          <option value="unrelated">Unrelated</option>
-        </select>
       </section>
 
       <div class="results-meta">
@@ -203,56 +197,62 @@
     </main>
 
     <script>
-      const items = [
-        { title: "Attention Is All You Need", type: "application", description: "The original transformer paper for modern language models." },
-        { title: "Prompt Engineering Basics", type: "application", description: "A short guide to getting better outputs from LLMs." },
-        { title: "Experiment Notes", description: "Quick observations from model tests and UI experiments." },
-        { title: "RAG Overview", description: "A compact summary of retrieval-augmented generation." },
-        { title: "Frontend Checklist", description: "Small items to verify before shipping a UI." },
-      ];
-
       const searchInput = document.getElementById("searchInput");
-      const filterSelect = document.getElementById("filterSelect");
       const results = document.getElementById("results");
       const resultCount = document.getElementById("resultCount");
 
-      function render() {
-        const query = searchInput.value.trim().toLowerCase();
-        const filter = filterSelect.value;
+      let pending = null;
 
-        const filteredItems = items.filter((item) => {
-          const matchesQuery = item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query);
-          const matchesFilter = filter === "none" || item.type === filter;
-          return matchesQuery && matchesFilter;
-        });
-
-        resultCount.textContent = `${filteredItems.length} result${filteredItems.length === 1 ? "" : "s"}`;
-
-        if (filteredItems.length === 0) {
-          results.innerHTML = '<div class="empty">No items match your search.</div>';
+      async function doSearch() {
+        const query = searchInput.value.trim();
+        if (!query) {
+          results.innerHTML = '<div class="empty">Type a query to search.</div>';
+          resultCount.textContent = "0 results";
           return;
         }
 
-        results.innerHTML = filteredItems
-          .map(
-            (item) => `
-              <article class="card">
-                <div class="card-top">
-                  <div>
-                    <h2 class="title">${item.title}</h2>
-                    <p class="description">${item.description}</p>
-                  </div>
-                  <span class="tag">${item.type}</span>
-                </div>
-              </article>
-            `,
-          )
-          .join("");
+        resultCount.textContent = "Searching...";
+
+        try {
+          const resp = await fetch('/api/search', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query, top_k: 10 }),
+          });
+          if (!resp.ok) throw new Error(`Server error: ${resp.status}`);
+          const data = await resp.json();
+          const items = data.results || [];
+          resultCount.textContent = `${items.length} result${items.length === 1 ? '' : 's'}`;
+          if (items.length === 0) {
+            results.innerHTML = '<div class="empty">No items match your search.</div>';
+            return;
+          }
+          results.innerHTML = items.map(item => `\
+            <article class="card">\
+              <div class="card-top">\
+                <div>\
+                  <h2 class="title">${item.link ? `<a href="${item.link}" target="_blank" rel="noreferrer">${item.title}</a>` : item.title}</h2>\
+                  <p class="description">${item.abstract || ''}</p>\
+                </div>\
+                <span class="tag">score: ${item.score.toFixed(3)}</span>\
+              </div>\
+            </article>\
+          `).join('');
+        } catch (e) {
+          resultCount.textContent = '0 results';
+          results.innerHTML = `<div class="empty">Error: ${e.message}</div>`;
+        }
       }
 
-      searchInput.addEventListener("input", render);
-      filterSelect.addEventListener("change", render);
-      render();
+      let debounceTimer = null;
+      function scheduleSearch() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(doSearch, 300);
+      }
+
+      searchInput.addEventListener('input', scheduleSearch);
+      // initial empty state
+      results.innerHTML = '<div class="empty">Type a query to search.</div>';
     </script>
   </body>
 </html>

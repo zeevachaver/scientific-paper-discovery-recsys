@@ -2,10 +2,16 @@ from pathlib import Path
 import json
 
 from dotenv import load_dotenv
-from openai import OpenAI
 
-load_dotenv(Path(__file__).resolve().parent / ".env")
-client = OpenAI()
+# OpenAI is optional for local demos; guard the import so the module
+# can be imported even when the package or credentials are missing.
+try:
+    from openai import OpenAI
+
+    load_dotenv(Path(__file__).resolve().parent / ".env")
+    client = OpenAI()
+except Exception:
+    client = None
 
 
 def llm_parse_user_message(user_message: str) -> dict:
@@ -26,6 +32,14 @@ def llm_parse_user_message(user_message: str) -> dict:
         {"role": "user", "content": user_message},
     ]
 
+    # If OpenAI client isn't available, skip LLM parsing and return a fallback.
+    if client is None:
+        return {
+            "target_paper": None,
+            "relationship": None,
+            "search_terms": [user_message],
+        }
+
     try:
         response = client.chat.completions.create(
             model="gpt-4o-mini",
@@ -43,7 +57,5 @@ def llm_parse_user_message(user_message: str) -> dict:
         return {
             "target_paper": None,
             "relationship": None,
-            "search_terms": [],
+            "search_terms": [user_message],
         }
-
-print(llm_parse_user_message("Find papers that critique Attention Is All You Need"))

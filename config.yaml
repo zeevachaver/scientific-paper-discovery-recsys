@@ -1,6 +1,6 @@
 paths:
-  raw_papers: data/raw_papers.jsonl
-  raw_edges: data/raw_edges.csv
+  raw_papers: data/sample/raw_papers.jsonl
+  raw_edges: data/sample/raw_edges.csv
   cleaned_papers: data/cleaned_papers.jsonl
   graph_edges: data/graph_edges.csv
   candidate_pairs: data/candidate_pairs.csv
